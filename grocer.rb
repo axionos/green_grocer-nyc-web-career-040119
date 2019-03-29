@@ -52,8 +52,6 @@ def apply_clearance(cart)
     if data[:clearance] == true
       discount = data[:price] * 0.8
       data[:price] = discount.round(2)
-    else
-      after_clearance[item] = data
     end
   end
   cart
