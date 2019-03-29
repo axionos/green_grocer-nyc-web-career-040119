@@ -5,6 +5,8 @@ def consolidate_cart(cart)
       if cart_item == nil
         cart_item[name] = data
         cart_item[name][:count] = 1
+      else
+        cart_item[name][:count] += 1
       end
     end
   end
