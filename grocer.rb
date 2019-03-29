@@ -17,9 +17,9 @@ def apply_coupons(cart, coupons)
   after_coupon = {}
 
   cart.each do |name, data|
-    
+
   end
-  after_coupon  
+  after_coupon
 end
 
 def apply_clearance(cart)
