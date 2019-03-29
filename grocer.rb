@@ -18,6 +18,8 @@ def apply_coupons(cart, coupons)
   cart.each do |name, data|
     if name == coupons[:item]
       
+    else
+
     end
   end
 end
