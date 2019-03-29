@@ -19,7 +19,7 @@ def apply_coupons(cart, coupons)
     if name == coupons[:item]
       
     else
-
+      after_coupon[name] = data
     end
   end
 end
