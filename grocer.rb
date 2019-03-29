@@ -22,7 +22,11 @@ def apply_coupons(cart, coupons)
         count = data[:count] - coupon[:num]
 
         if count >= 0
+          if after_coupon["#{name}" W/COUPON] == nil
+            after_coupon["#{name}" W/COUPON] = {:price = coupon[:cost], :clearance = data[:clearance], :count = coupon[:count]}
+          else
 
+          end
         else
 
         end
