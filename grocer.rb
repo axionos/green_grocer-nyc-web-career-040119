@@ -52,7 +52,7 @@ def apply_clearance(cart)
 
   cart.each do |item, data|
     if data[:clearance] == true
-      discounted = data[:price] * 0.8
+      discount = data[:price] * 0.8
       after_clearance[item] = {
         :price => discounted, :clearance => data[:clearance], :count => data[count]
       }
