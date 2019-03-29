@@ -17,7 +17,7 @@ def apply_coupons(cart, coupons)
   coupons.each do |coupon|
     item_name = coupon[:item]
     if cart.keys.include?(item_name)
-      cart[]
+      cart[item_name] = cart[item_name][:count]
     end
   end
 end
