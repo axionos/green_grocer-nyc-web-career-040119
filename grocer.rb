@@ -1,4 +1,5 @@
 def consolidate_cart(cart)
+  cart_item = {}
   cart.each do |item, detail|
 
   end
