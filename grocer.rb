@@ -20,6 +20,12 @@ def apply_coupons(cart, coupons)
     cart.each do |name, data|
       if name == coupon[:name]
         count = data[:count] - coupon[:num]
+
+        if count >= 0
+
+        else
+
+        end
       end
     end
   end
