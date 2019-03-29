@@ -4,7 +4,7 @@ def consolidate_cart(cart)
     item.each do |name, data|
       if cart_item[name] == nil
         cart_item[name] = data
-        
+        cart_item[name][:count] = 1
       end
     end
   end
