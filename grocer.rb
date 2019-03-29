@@ -14,8 +14,13 @@ def consolidate_cart(cart)
 end
 
 def apply_coupons(cart, coupons)
+
   after_coupon = {}
 
+  if coupons == nil || coupons.empty?
+    after_coupon = cart
+  end
+  
   coupons.each do |coupon|
     cart.each do |name, data|
       if name == coupon[:name]
