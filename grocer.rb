@@ -15,8 +15,8 @@ end
 
 def apply_coupons(cart, coupons)
   applied_coupon = {}
-  coupons.each do |coupon|
-    coupon_name = coupon[:item]
+
+  applied_coupon  
 end
 
 def apply_clearance(cart)
