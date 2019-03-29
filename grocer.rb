@@ -31,6 +31,10 @@ def apply_coupons(cart, coupons)
         else
           count = data[:count]
         end
+        after_coupon[name] = data
+        after_coupon[name][:count] = count
+      else
+        after_coupon[name] = data
       end
     end
   end
