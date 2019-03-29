@@ -16,14 +16,14 @@ end
 def apply_coupons(cart, coupons)
 
   after_coupon = {}
-  # 
+  #
   # if coupons == nil || coupons.empty?
   #   after_coupon = cart
   # end
 
   coupons.each do |coupon|
     cart.each do |name, data|
-      if name == coupon[:name]
+      if name == coupon[:item]
         count = data[:count] - coupon[:num]
 
         if count >= 0
