@@ -48,7 +48,14 @@ def apply_coupons(cart, coupons)
 end
 
 def apply_clearance(cart)
-  
+  after_clearance = {}
+  cart.each do |item, data|
+    if data[:clearance]
+
+    else
+
+    end
+  end
 end
 
 def checkout(cart, coupons)
