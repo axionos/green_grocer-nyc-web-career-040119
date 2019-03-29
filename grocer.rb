@@ -31,9 +31,9 @@ def apply_coupons(cart, coupons)
             after_coupon["#{name} W/COUPON"] = {:price => coupon[:cost], :clearance => data[:clearance], :count => 1}
           else
             couponcount = after_coupon["#{name} W/COUPON"][:count] + 1
-            after_coupon["#{name} W/COUPON"] = {:price => coupon[:cost], :clearance => data[:clearance], :count => couponcount}
+            # after_coupon["#{name} W/COUPON"] = {:price => coupon[:cost], :clearance => data[:clearance], :count => couponcount}
 
-            after_coupon["#{name} W/COUPON"][:count] = couponcount
+            after_coupon["#{name} W/COUPON"][:count]
           end
         else
           count = data[:count]
