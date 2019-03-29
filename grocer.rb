@@ -17,7 +17,7 @@ def apply_coupons(cart, coupons)
   after_coupon = {}
   cart.each do |name, data|
     if name == coupons[:item]
-      after_coupon["#{name} W/COUPON"] = 
+      after_coupon["#{name} W/COUPON"]
     else
       after_coupon[name] = data
     end
