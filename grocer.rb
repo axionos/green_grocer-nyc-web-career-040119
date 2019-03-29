@@ -15,35 +15,62 @@ end
 
 def apply_coupons(cart, coupons)
 
-  after_coupon = {}
-
+  # after_coupon = {}
+  #
+  # if coupons == nil || coupons.empty?
+  #   after_coupon = cart
+  # end
+  #
+  # coupons.each do |coupon|
+  #   cart.each do |name, data|
+  #     if name == coupon[:name]
+  #       count = data[:count] - coupon[:num]
+  #
+  #       if count >= 0
+  #         if after_coupon["#{name} W/COUPON"] == nil
+  #           after_coupon["#{name} W/COUPON"] = {:price => coupon[:cost], :clearance => data[:clearance], :count => 1}
+  #         else
+  #           couponcount = after_coupon["#{name} W/COUPON"][:count] + 1
+  #           after_coupon["#{name} W/COUPON"] = {:price => coupon[:cost], :clearance => data[:clearance], :count => couponcount}
+  #         end
+  #       else
+  #         count = data[:count]
+  #       end
+  #       after_coupon[name] = data
+  #       after_coupon[name][:count] = count
+  #     else
+  #       after_coupon[name] = data
+  #     end
+  #   end
+  # end
+  # after_coupon
+  my_hash = {}
   if coupons == nil || coupons.empty?
-    after_coupon = cart
+    my_hash = cart
   end
-  
   coupons.each do |coupon|
-    cart.each do |name, data|
-      if name == coupon[:name]
+    cart.each do |itemname, data|
+      if itemname == coupon[:item]
         count = data[:count] - coupon[:num]
 
         if count >= 0
-          if after_coupon["#{name} W/COUPON"] == nil
-            after_coupon["#{name} W/COUPON"] = {:price => coupon[:cost], :clearance => data[:clearance], :count => 1}
+          if my_hash["#{itemname} W/COUPON"] == nil
+            my_hash["#{itemname} W/COUPON"] = {price: coupon[:cost], clearance: data[:clearance], count: 1}
           else
-            couponcount = after_coupon["#{name} W/COUPON"][:count] + 1
-            after_coupon["#{name} W/COUPON"] = {:price => coupon[:cost], :clearance => data[:clearance], :count => couponcount}
+            couponcount = my_hash["#{itemname} W/COUPON"][:count] + 1
+            my_hash["#{itemname} W/COUPON"] = {price: coupon[:cost], clearance: data[:clearance], count: couponcount}
           end
         else
           count = data[:count]
         end
-        after_coupon[name] = data
-        after_coupon[name][:count] = count
+        my_hash[itemname] = data
+        my_hash[itemname][:count] = count
       else
-        after_coupon[name] = data
+        my_hash[itemname] = data
       end
     end
   end
-  after_coupon
+  my_hash
 end
 
 def apply_clearance(cart)
