@@ -14,14 +14,9 @@ def consolidate_cart(cart)
 end
 
 def apply_coupons(cart, coupons)
-  after_coupon = {}
-  cart.each do |name, data|
-    if name == coupons[:item]
-      after_coupon["#{name} W/COUPON"] = {
-        :price => "", :clearance => "", :count => ""
-      }
-    else
-      after_coupon[name] = data
+  coupons.each do |coupon|
+    if cart.keys.include?(coupon[:item])
+
     end
   end
 end
